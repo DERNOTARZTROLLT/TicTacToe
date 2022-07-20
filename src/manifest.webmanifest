@@ -8,7 +8,6 @@
     "short_name": "TicTacToe",
     "description": "TicTacToe",
     "icons": [
-
         {
             "src": "/TicTacToe/src/icon-512x512.png",
             "sizes": "512x512",
