@@ -4,11 +4,12 @@ let player2 = 0;
 let counter = 0;
 let gamer = 2;
 let kicounter = 0;
-
 //symbole setzen
 function setSymbol(btn) {
     if (btn.innerHTML == "") {
         btn.innerHTML = currentPlayer;
+        btn.classList.add('animate__animated');
+        btn.classList.add('animate__fadeIn');
 
         if (gamer == 1) {
             kitrain();
@@ -27,7 +28,9 @@ function nextround() {
     let felder = document.getElementsByClassName("feld");
     let x = felder.length;
     for (var i = 0; i < x; i++) {
-        felder[i].innerHTML = ""
+        felder[i].innerHTML = "";
+        felder[i].classList.remove("animate__animated");
+        felder[i].classList.remove("animate__fadeIn");  
     }
     counter = 0;
     kicounter = 0;
@@ -59,6 +62,8 @@ function restart() {
     let x = felder.length;
     for (var i = 0; i < x; i++) {
         felder[i].innerHTML = ""
+        felder[i].classList.remove("animate__animated");
+        felder[i].classList.remove("animate__fadeIn");        
     }
 }
 //function wechsele Spieler jeweils nach dem Zug

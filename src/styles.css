@@ -94,6 +94,7 @@ h1 {
     left: 0%;
     text-align: center;
     display: none;
+    z-index: 9;
 }
 
 #overlay2 {
@@ -105,6 +106,7 @@ h1 {
     left: 0%;
     text-align: center;
     display: none;
+    z-index: 9;
 }
 
 #overlayh {
@@ -116,6 +118,7 @@ h1 {
     left: 0%;
     text-align: center;
     display: none;
+    z-index: 9;
 }
 @media only screen and (min-width: 600px) {
     .feld{
@@ -158,4 +161,8 @@ h1 {
     h1{
         font-size: 50px;
     }
+}
+@keyframes setx {
+from {font-size: 1px;}
+to {font-size: 130px;}
 }
