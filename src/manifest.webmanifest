@@ -2,11 +2,11 @@
     "theme_color": "#f69435",
     "background_color": "#f69435",
     "display": "fullscreen",
-    "scope": "/Tic-tac-Toe/src",
-    "start_url": "https://github.com/DERNOTARZTROLLT/Tic-tac-Toe/src",
-    "name": "Tic-tac-Toe",
-    "short_name": "Tic-tac-Toe",
-    "description": "Tic-tac-Toe",
+    "scope": "/TicTacToe/src",
+    "start_url": "https://github.com/DERNOTARZTROLLT/TicTacToe/src",
+    "name": "TicTacToe",
+    "short_name": "TicTacToe",
+    "description": "TicTacToe",
     "icons": [
         {
             "src": "/TicTacToe/src/icon-512x512.png",
