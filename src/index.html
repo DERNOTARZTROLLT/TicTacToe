@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <title>
+        Tic Tac Toe
+    </title>
+    <link rel="icon" type="image/x-icon" href="/Tic-tac-Toe/src/icon-192x192.png">
+    <link rel="manifest" href="/Tic-tac-Toe/src/manifest.webmanifest">
+</head>
+
+<body>
+    <table class="anzg">
+        <tr>
+            <td class="anz">
+                <h1>Player X </h1>
+            </td>
+            <td class="anz">
+                <h1> Player O</h1>
+            </td>
+        </tr>
+        <tr>
+            <td class="anz">
+                <h1 id="player1">0</h1>
+            </td>
+            <td class="anz">
+                <h1 id="player2">0</h1>
+            </td>
+        </tr>
+    </table>
+    <div id="area">
+        <div id="overlay">
+            <p>
+            <h1> Herzlichen Glückwunsch Spieler</h1>
+            <h1 id="meldung"></h1>
+            </p>
+
+            <button class="button" onclick="nextround()">
+                Weiterspielen?
+            </button>
+        </div>
+        <div id="overlay2">
+            <p>
+            <h1>
+                Unentschieden! keiner bekommt einen Punkt.
+            </h1>
+            </p>
+            <button class="button" onclick="nextround()">
+                Weiterspielen?
+            </button>
+        </div>
+        <div id="overlayh">
+            <table class="anzg">
+                <tr>
+                    <td>
+                        <p>
+                        <h1>
+                            Hauptmen&uuml;
+                        </h1>
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <button class="button" onclick="resume()">
+                            Zurück
+                        </button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <button class="button" onclick="setGameMode(1)">
+                            1 Player
+                        </button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <button class="button" onclick="setGameMode(2)">
+                            2 Player
+                        </button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <table class="Spielfeld ">
+            <tr>
+                <td class="tac">
+                    <button class="feld " onclick="setSymbol(this)" id="0"></button>
+                </td>
+                <td class="tac">
+                    <button class="feld " onclick="setSymbol(this)" id="1"></button>
+                </td>
+                <td class="tac">
+                    <button class="feld " onclick="setSymbol(this)" id="2"></button>
+                </td>
+            </tr>
+            <tr>
+                <td class="tac">
+                    <button class="feld " onclick="setSymbol(this)" id="3"></button>
+                </td>
+                <td class="tac">
+                    <button class="feld " onclick="setSymbol(this)" id="4"></button>
+                </td>
+                <td class="tac">
+                    <button class="feld " onclick="setSymbol(this)" id="5"></button>
+                </td>
+            </tr>
+            <tr>
+                <td class="tac">
+                    <button class="feld " onclick="setSymbol(this)" id="6"></button>
+                </td>
+                <td class="tac">
+                    <button class="feld " onclick="setSymbol(this)" id="7"></button>
+                </td>
+                <td class="tac">
+                    <button class="feld " onclick="setSymbol(this)" id="8"></button>
+                </td>
+            </tr>
+            <tr>
+                <td class="tac">
+
+                </td>
+                <td class="tac">
+                    <button onclick="home()" class="home">
+                        Home
+                    </button>
+                </td>
+            </tr>
+
+    </div>
+    <script type="text/javascript" src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+{
+    "theme_color": "#f69435",
+    "background_color": "#f69435",
+    "display": "fullscreen",
+    "scope": "/Tic-tac-Toe/src",
+    "start_url": "https://github.com/DERNOTARZTROLLT/Tic-tac-Toe/src",
+    "name": "Tic-tac-Toe",
+    "short_name": "Tic-tac-Toe",
+    "description": "Tic-tac-Toe",
+    "icons": [
+        {
+            "src": "/Tic-tac-Toe/src/icon-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/Tic-tac-Toe/src/icon-256x256.png",
+            "sizes": "256x256",
+            "type": "image/png"
+        },
+        {
+            "src": "/Tic-tac-Toe/src/icon-384x384.png",
+            "sizes": "384x384",
+            "type": "image/png"
+        },
+        {
+            "src": "/Tic-tac-Toe/src/icon-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}
