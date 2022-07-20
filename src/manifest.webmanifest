@@ -9,8 +9,8 @@
     "description": "Tic-tac-Toe",
     "icons": [
         {
-            "src": "/Tic-tac-Toe/src/icon-512x512.png",
-            "sizes": "512x512",
+            "src": "/Tic-tac-Toe/src/icon-384x384.png",
+            "sizes": "384x384",
             "type": "image/png"
         },
         {
@@ -24,10 +24,9 @@
             "type": "image/png"
         },
         {
-            "src": "/Tic-tac-Toe/src/icon-384x384.png",
-            "sizes": "384x384",
+            "src": "/Tic-tac-Toe/src/icon-512x512.png",
+            "sizes": "512x512",
             "type": "image/png"
         },
-
     ]
 }
