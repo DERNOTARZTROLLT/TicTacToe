@@ -53,6 +53,10 @@ vh vw
     animation-duration: 4s;
     animation-iteration-count: infinite;
 }
+.menue{
+    margin-left: auto;
+    margin-right: auto;
+}
 
 .anz1 {
     text-align: left;
@@ -165,7 +169,7 @@ h1 {
     z-index: 9;
     border-width: 5px;
     border-style: solid;
-    border-radius: 40%;
+    border-radius: 5%;
     animation-name: borderan;
     animation-duration: 4s;
     animation-iteration-count: infinite;
