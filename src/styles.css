@@ -9,11 +9,12 @@ body {
 }
 
 .tac {
-border: 0;
+    border: 0;
 }
-.home2{
-    margin-top:0px;
-    margin-left: 0px;
+
+.home2 {
+    margin-top: 0px;
+    margin-right: 0px;
 }
 
 .home {
@@ -27,7 +28,7 @@ border: 0;
     height: 50px;
     border-width: 5px;
     border-style: solid;
-    border-radius: 20%;
+    border-radius: 20px;
     animation-name: borderan;
     animation-duration: 4s;
     animation-iteration-count: infinite;
@@ -48,12 +49,13 @@ vh vw
     width: 300px;
     border-width: 5px;
     border-style: solid;
-    border-radius: 20%;
+    border-radius: 20px;
     animation-name: borderan;
     animation-duration: 4s;
     animation-iteration-count: infinite;
 }
-.menue{
+
+.menue {
     margin-left: auto;
     margin-right: auto;
 }
@@ -65,6 +67,7 @@ vh vw
     color: white;
     left: 0;
 }
+
 .anz2 {
     text-align: right;
     vertical-align: middle;
@@ -72,6 +75,7 @@ vh vw
     color: white;
     right: 0;
 }
+
 .button {
     font-family: Comic Sans MS, Comic Sans;
     font-size: 20px;
@@ -85,7 +89,7 @@ vh vw
     font-size: 1.5em;
     border-width: 5px;
     border-style: solid;
-    border-radius: 8%;
+    border-radius: 20px;
     animation-name: borderan;
     animation-duration: 4s;
     animation-iteration-count: infinite;
@@ -120,12 +124,72 @@ h1 {
 #area {
     position: relative;
 }
-
+.kreis{
+    position:absolute;
+    border-color: white;
+    border-style: solid;
+    border-width: 5px;
+    border-radius: 20px;
+    width: 310px;
+    height: 100px;
+    box-sizing: border-box;
+    top: 50%;
+    left: 50%;
+    margin-top: -50px;
+    margin-left: -155px;
+    display: none;
+}
+.kreis--bottom{
+    margin-top:54px ;
+    margin-left: -155px;
+    display: none;
+}
+.kreis--top{
+    margin-top:-100px ;
+    margin-left: -155px;
+    display: none;
+}
+.kreis--middle{
+    width: 100px;
+    height: 310px;
+    margin-left: -50px;
+    margin-top: -155px;
+    display: none;
+}
+.kreis--left{
+    width: 100px;
+    height: 310px;
+    margin-left: -155px;
+    margin-top: -155px;
+    display: none;
+}
+.kreis--right{
+    width: 100px;
+    height: 310px;
+    margin-left: 55px;
+    margin-top: -155px;
+    display: none;
+}
+.kreis--diaright{
+    transform: rotate(45deg);
+    margin-left: -180px;
+    margin-top: -50px;
+    width: 360px;
+    display: none;
+}
+.kreis--dialeft{
+    transform: rotate(-45deg);
+    margin-left: -180px;
+    margin-top: -50px;
+    width: 360px;
+    display: none;
+}
 #overlay {
     position: absolute;
     background-color: rgba(0, 140, 255, 80%);
     width: 100%;
     height: 100%;
+    box-sizing: border-box;
     top: 0%;
     left: 0%;
     text-align: center;
@@ -133,7 +197,7 @@ h1 {
     z-index: 9;
     border-width: 5px;
     border-style: solid;
-    border-radius: 8%;
+    border-radius: 20px;
     animation-name: borderan;
     animation-duration: 4s;
     animation-iteration-count: infinite;
@@ -144,6 +208,7 @@ h1 {
     background-color: rgba(0, 140, 255, 80%);
     width: 100%;
     height: 100%;
+    box-sizing: border-box;
     top: 0%;
     left: 0%;
     text-align: center;
@@ -151,7 +216,7 @@ h1 {
     z-index: 9;
     border-width: 5px;
     border-style: solid;
-    border-radius: 8%;
+    border-radius: 20px;
     animation-name: borderan;
     animation-duration: 4s;
     animation-iteration-count: infinite;
@@ -162,14 +227,15 @@ h1 {
     background-color: rgba(0, 140, 255, 80%);
     width: 100%;
     height: 100%;
+    box-sizing: border-box;
     top: 0%;
-    left: 0%;
+    left: 0px;
     text-align: center;
     display: none;
     z-index: 9;
     border-width: 5px;
     border-style: solid;
-    border-radius: 5%;
+    border-radius: 20px;
     animation-name: borderan;
     animation-duration: 4s;
     animation-iteration-count: infinite;
@@ -182,7 +248,8 @@ h1 {
         font-size: 130px;
 
     }
-    .anzg{
+
+    .anzg {
         width: 450px;
     }
 
@@ -202,7 +269,6 @@ h1 {
         font-size: 40px;
     }
 }
-
 @media only screen and (min-width: 800px) {
     .feld {
         width: 200px;
@@ -210,9 +276,11 @@ h1 {
         font-size: 180px;
 
     }
-    .anzg{
+
+    .anzg {
         width: 600px;
     }
+
     .home {
         font-size: 40px;
         width: 200px;
@@ -229,7 +297,6 @@ h1 {
         font-size: 50px;
     }
 }
-
 @keyframes borderan {
     0% {
         border-color: red;
@@ -251,3 +318,15 @@ h1 {
         border-color: red;
     }
 }
+
+@media (orientation: landscape) {
+    body {
+      flex-direction: row;
+    }
+  }
+  
+  @media (orientation: portrait) {
+    body {
+      flex-direction: column;
+    }
+  }

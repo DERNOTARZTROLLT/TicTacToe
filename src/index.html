@@ -6,22 +6,22 @@
     <title>
         Tic Tac Toe
     </title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" >
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="/Tic-tac-Toe/src/icon-192x192.png">
     <link rel="manifest" href="/TicTacToe/src/manifest.webmanifest">
 </head>
 
 <body>
-    <table>
-<tr>
-    <td class="home2">
-        <button onclick="home()" class="home">
-         Men&uuml;
-        </button>
-    </td>
-</tr>
-</table>
+    <table class="home2">
+        <tr>
+            <td>
+                <button onclick="home()" class="home">
+                    Men&uuml;
+                </button>
+            </td>
+        </tr>
+    </table>
     <table class="anzg">
         <tr>
             <td class="anz1">
@@ -114,15 +114,17 @@
                 </td>
             </tr>
             <tr>
-                <td class="tac">
-                    <button class="feld " onclick="setSymbol(this)" id="3"></button>
-                </td>
-                <td class="tac">
-                    <button class="feld " onclick="setSymbol(this)" id="4"></button>
-                </td>
-                <td class="tac">
-                    <button class="feld " onclick="setSymbol(this)" id="5"></button>
-                </td>
+                <div class="kreis">
+                    <td class="tac">
+                        <button class="feld " onclick="setSymbol(this)" id="3"></button>
+                    </td>
+                    <td class="tac">
+                        <button class="feld " onclick="setSymbol(this)" id="4"></button>
+                    </td>
+                    <td class="tac">
+                        <button class="feld " onclick="setSymbol(this)" id="5"></button>
+                    </td>
+                </div>
             </tr>
             <tr>
                 <td class="tac">

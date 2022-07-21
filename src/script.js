@@ -45,7 +45,6 @@ function nextround() {
     currentPlayer = "X";
 
 }
-
 //function unentschieden?
 function draw() {
     if (counter >= 8) {
@@ -57,7 +56,11 @@ function resume() {
     document.getElementById("overlayh").style.display = "none";
 }
 function home() {
-    document.getElementById("overlayh").style.display = "block";
+    if (document.getElementById("overlayh").style.display == "none") {
+        document.getElementById("overlayh").style.display = "block";
+    } else {
+        document.getElementById("overlayh").style.display = "none";
+    }
 }
 function restart() {
     document.getElementById("overlayh").style.display = "none";
@@ -134,7 +137,17 @@ function checkWin() {
 
 
 }
-
+function checkwhy() {
+    let felder = document.getElementsByClassName("feld")
+    let kreise = document.getElementsByClassName("kreis")
+    if (felder[0].innerHTML == felder[1].innerHTML && felder[1].innerHTML == felder[2].innerHTML && felder[0].innerHTML == "X"|| felder[0].innerHTML == "O") {
+        document.getElementsByClassName("Kreis--top").style.display = "block";
+    }else if(felder[3].innerHTML == felder[4].innerHTML && felder[4].innerHTML == felder[5].innerHTML && felder[3].innerHTML == "X" ||felder[3].innerHTML == "O"){
+        felder[2].classList.add('Kreis');
+        document.getElementsByClassName("Kreis").style.display = "block";
+    }else if(felder[6].innerHTML == felder[7].innerHTML && felder[7].innerHTML == felder[8].innerHTML && felder[6].innerHTML == "X" ||felder[6] == "O"){
+        document.getElementsByClassName("Kreis kreis--bottom").style.display = "block"}
+}
 //künstliche intelligenz mit ueberpruefung von gesetzten x und abwehren
 function kitrain() {
     kicounter = kicounter + 1
