@@ -4,6 +4,8 @@ let player2 = 0;
 let counter = 0;
 let gamer = 2;
 let kicounter = 0;
+let zoomp1 = document.getElementById("player1")
+let zoomp2 = document.getElementById("player2")
 //symbole setzen
 function setSymbol(btn) {
     if (btn.innerHTML == "") {
@@ -27,15 +29,23 @@ function nextround() {
     document.getElementById("overlay2").style.display = "none";
     let felder = document.getElementsByClassName("feld");
     let x = felder.length;
+
+    zoomp1.classList.remove('animate__animated');
+    zoomp1.classList.remove('animate__zoomIn');
+    zoomp2.classList.remove('animate__animated');
+    zoomp2.classList.remove('animate__zoomIn');
+
     for (var i = 0; i < x; i++) {
         felder[i].innerHTML = "";
         felder[i].classList.remove("animate__animated");
-        felder[i].classList.remove("animate__fadeIn");  
+        felder[i].classList.remove("animate__fadeIn");
     }
     counter = 0;
     kicounter = 0;
     currentPlayer = "X";
+
 }
+
 //function unentschieden?
 function draw() {
     if (counter >= 8) {
@@ -63,8 +73,13 @@ function restart() {
     for (var i = 0; i < x; i++) {
         felder[i].innerHTML = ""
         felder[i].classList.remove("animate__animated");
-        felder[i].classList.remove("animate__fadeIn");        
+        felder[i].classList.remove("animate__fadeIn");
+        zoomp1.classList.remove('animate__animated');
+        zoomp1.classList.remove('animate__zoomIn');
+        zoomp2.classList.remove('animate__animated');
+        zoomp2.classList.remove('animate__zoomIn');
     }
+
 }
 //function wechsele Spieler jeweils nach dem Zug
 function changeplayer() {
@@ -85,7 +100,6 @@ function setGameMode(mode) {
 //ueberpruefe ob jemand gewonnen Hat
 function checkWin() {
     let felder = document.getElementsByClassName("feld")
-
     if (felder[0].innerHTML == felder[1].innerHTML && felder[1].innerHTML == felder[2].innerHTML && felder[0].innerHTML == "X" ||
         felder[3].innerHTML == felder[4].innerHTML && felder[4].innerHTML == felder[5].innerHTML && felder[3].innerHTML == "X" ||
         felder[6].innerHTML == felder[7].innerHTML && felder[7].innerHTML == felder[8].innerHTML && felder[6].innerHTML == "X" ||
@@ -98,7 +112,9 @@ function checkWin() {
         document.getElementById("player1").innerHTML = player1;
         document.getElementById("overlay").style.display = "block";
         document.getElementById("meldung").innerHTML = "X"
-    } else if (felder[0].innerHTML == felder[1].innerHTML && felder[1].innerHTML == felder[2].innerHTML && felder[0].innerHTML == "x" ||
+        zoomp1.classList.add('animate__animated');
+        zoomp1.classList.add('animate__zoomIn');
+    } else if (felder[0].innerHTML == felder[1].innerHTML && felder[1].innerHTML == felder[2].innerHTML && felder[0].innerHTML == "O" ||
         felder[3].innerHTML == felder[4].innerHTML && felder[4].innerHTML == felder[5].innerHTML && felder[3].innerHTML == "O" ||
         felder[6].innerHTML == felder[7].innerHTML && felder[7].innerHTML == felder[8].innerHTML && felder[6].innerHTML == "O" ||
         felder[0].innerHTML == felder[3].innerHTML && felder[3].innerHTML == felder[6].innerHTML && felder[0].innerHTML == "O" ||
@@ -110,6 +126,8 @@ function checkWin() {
         document.getElementById("player2").innerHTML = player2;
         document.getElementById("overlay").style.display = "block";
         document.getElementById("meldung").innerHTML = "O"
+        zoomp2.classList.add('animate__animated');
+        zoomp2.classList.add('animate__zoomIn');
     } else {
         draw()
     }
@@ -127,174 +145,233 @@ function kitrain() {
 
     if (felder[0].innerHTML == "O" && felder[1].innerHTML == "O" && felder[2].innerHTML == "") {
         felder[2].innerHTML = "O";
-
+        felder[2].classList.add('animate__animated');
+        felder[2].classList.add('animate__fadeIn');
     } else if (felder[1].innerHTML == "O" && felder[2].innerHTML == "O" && felder[0].innerHTML == "") {
         felder[0].innerHTML = "O";
+        felder[0].classList.add('animate__animated');
+        felder[0].classList.add('animate__fadeIn');
 
     } else if (felder[0].innerHTML == "O" && felder[2].innerHTML == "O" && felder[1].innerHTML == "") {
         felder[1].innerHTML = "O";
-
+        felder[1].classList.add('animate__animated');
+        felder[1].classList.add('animate__fadeIn');
     } else if (felder[3].innerHTML == "O" && felder[4].innerHTML == "O" && felder[5].innerHTML == "") {
         felder[5].innerHTML = "O";
-
+        felder[5].classList.add('animate__animated');
+        felder[5].classList.add('animate__fadeIn');
     } else if (felder[4].innerHTML == "O" && felder[5].innerHTML == "O" && felder[3].innerHTML == "") {
         felder[3].innerHTML = "O";
-
+        felder[3].classList.add('animate__animated');
+        felder[3].classList.add('animate__fadeIn');
     } else if (felder[3].innerHTML == "O" && felder[5].innerHTML == "O" && felder[4].innerHTML == "") {
         felder[4].innerHTML = "O";
-
+        felder[4].classList.add('animate__animated');
+        felder[4].classList.add('animate__fadeIn');
     } else if (felder[6].innerHTML == "O" && felder[7].innerHTML == "O" && felder[8].innerHTML == "") {
         felder[8].innerHTML = "O";
-
+        felder[8].classList.add('animate__animated');
+        felder[8].classList.add('animate__fadeIn');
     } else if (felder[7].innerHTML == "O" && felder[8].innerHTML == "O" && felder[6].innerHTML == "") {
         felder[6].innerHTML = "O";
-
+        felder[6].classList.add('animate__animated');
+        felder[6].classList.add('animate__fadeIn');
     } else if (felder[6].innerHTML == "O" && felder[8].innerHTML == "O" && felder[7].innerHTML == "") {
         felder[7].innerHTML = "O";
-
+        felder[7].classList.add('animate__animated');
+        felder[7].classList.add('animate__fadeIn');
     } else if (felder[0].innerHTML == "O" && felder[3].innerHTML == "O" && felder[6].innerHTML == "") {
         felder[6].innerHTML = "O";
-
+        felder[6].classList.add('animate__animated');
+        felder[6].classList.add('animate__fadeIn');
     } else if (felder[3].innerHTML == "O" && felder[6].innerHTML == "O" && felder[0].innerHTML == "") {
         felder[0].innerHTML = "O";
-
+        felder[0].classList.add('animate__animated');
+        felder[0].classList.add('animate__fadeIn');
     } else if (felder[0].innerHTML == "O" && felder[6].innerHTML == "O" && felder[3].innerHTML == "") {
         felder[3].innerHTML = "O";
-
+        felder[3].classList.add('animate__animated');
+        felder[3].classList.add('animate__fadeIn');
     } else if (felder[1].innerHTML == "O" && felder[4].innerHTML == "O" && felder[7].innerHTML == "") {
         felder[7].innerHTML = "O";
-
+        felder[7].classList.add('animate__animated');
+        felder[7].classList.add('animate__fadeIn');
     } else if (felder[4].innerHTML == "O" && felder[7].innerHTML == "O" && felder[1].innerHTML == "") {
         felder[1].innerHTML = "O";
-
+        felder[1].classList.add('animate__animated');
+        felder[1].classList.add('animate__fadeIn');
     } else if (felder[1].innerHTML == "O" && felder[7].innerHTML == "O" && felder[4].innerHTML == "") {
         felder[4].innerHTML = "O";
-
+        felder[4].classList.add('animate__animated');
+        felder[4].classList.add('animate__fadeIn');
     } else if (felder[2].innerHTML == "O" && felder[5].innerHTML == "O" && felder[8].innerHTML == "") {
         felder[8].innerHTML = "O";
-
+        felder[8].classList.add('animate__animated');
+        felder[8].classList.add('animate__fadeIn');
     } else if (felder[5].innerHTML == "O" && felder[8].innerHTML == "O" && felder[2].innerHTML == "") {
         felder[2].innerHTML = "O";
-
+        felder[2].classList.add('animate__animated');
+        felder[2].classList.add('animate__fadeIn');
     } else if (felder[2].innerHTML == "O" && felder[8].innerHTML == "O" && felder[5].innerHTML == "") {
         felder[5].innerHTML = "O";
-
+        felder[5].classList.add('animate__animated');
+        felder[5].classList.add('animate__fadeIn');
     } else if (felder[0].innerHTML == "O" && felder[4].innerHTML == "O" && felder[8].innerHTML == "") {
         felder[8].innerHTML = "O";
-
+        felder[8].classList.add('animate__animated');
+        felder[8].classList.add('animate__fadeIn');
     } else if (felder[4].innerHTML == "O" && felder[8].innerHTML == "O" && felder[0].innerHTML == "") {
         felder[0].innerHTML = "O";
-
+        felder[0].classList.add('animate__animated');
+        felder[0].classList.add('animate__fadeIn');
     } else if (felder[0].innerHTML == "O" && felder[8].innerHTML == "O" && felder[4].innerHTML == "") {
         felder[4].innerHTML = "O";
-
+        felder[4].classList.add('animate__animated');
+        felder[4].classList.add('animate__fadeIn');
     } else if (felder[2].innerHTML == "O" && felder[4].innerHTML == "O" && felder[6].innerHTML == "") {
         felder[6].innerHTML = "O";
-
+        felder[6].classList.add('animate__animated');
+        felder[6].classList.add('animate__fadeIn');
     } else if (felder[4].innerHTML == "O" && felder[6].innerHTML == "O" && felder[2].innerHTML == "") {
         felder[2].innerHTML = "O";
-
+        felder[2].classList.add('animate__animated');
+        felder[2].classList.add('animate__fadeIn');
     } else if (felder[2].innerHTML == "O" && felder[6].innerHTML == "O" && felder[4].innerHTML == "") {
         felder[4].innerHTML = "O";
-
+        felder[4].classList.add('animate__animated');
+        felder[4].classList.add('animate__fadeIn');
     } else if (felder[0].innerHTML == "X" && felder[1].innerHTML == "X" && felder[2].innerHTML == "") {
         felder[2].innerHTML = "O";
-
+        felder[2].classList.add('animate__animated');
+        felder[2].classList.add('animate__fadeIn');
     } else if (felder[1].innerHTML == "X" && felder[2].innerHTML == "X" && felder[0].innerHTML == "") {
         felder[0].innerHTML = "O";
-
+        felder[0].classList.add('animate__animated');
+        felder[0].classList.add('animate__fadeIn');
     } else if (felder[0].innerHTML == "X" && felder[2].innerHTML == "X" && felder[1].innerHTML == "") {
         felder[1].innerHTML = "O";
-
+        felder[1].classList.add('animate__animated');
+        felder[1].classList.add('animate__fadeIn');
     } else if (felder[3].innerHTML == "X" && felder[4].innerHTML == "X" && felder[5].innerHTML == "") {
         felder[5].innerHTML = "O";
-
+        felder[5].classList.add('animate__animated');
+        felder[5].classList.add('animate__fadeIn');
     } else if (felder[4].innerHTML == "X" && felder[5].innerHTML == "X" && felder[3].innerHTML == "") {
         felder[3].innerHTML = "O";
-
+        felder[3].classList.add('animate__animated');
+        felder[3].classList.add('animate__fadeIn');
     } else if (felder[3].innerHTML == "X" && felder[5].innerHTML == "X" && felder[4].innerHTML == "") {
         felder[4].innerHTML = "O";
-
+        felder[4].classList.add('animate__animated');
+        felder[4].classList.add('animate__fadeIn');
     } else if (felder[6].innerHTML == "X" && felder[7].innerHTML == "X" && felder[8].innerHTML == "") {
         felder[8].innerHTML = "O";
-
+        felder[8].classList.add('animate__animated');
+        felder[8].classList.add('animate__fadeIn');
     } else if (felder[7].innerHTML == "X" && felder[8].innerHTML == "X" && felder[6].innerHTML == "") {
         felder[6].innerHTML = "O";
-
+        felder[6].classList.add('animate__animated');
+        felder[6].classList.add('animate__fadeIn');
     } else if (felder[6].innerHTML == "X" && felder[8].innerHTML == "X" && felder[7].innerHTML == "") {
         felder[7].innerHTML = "O";
-
+        felder[7].classList.add('animate__animated');
+        felder[7].classList.add('animate__fadeIn');
     } else if (felder[0].innerHTML == "X" && felder[3].innerHTML == "X" && felder[6].innerHTML == "") {
         felder[6].innerHTML = "O";
-
+        felder[6].classList.add('animate__animated');
+        felder[6].classList.add('animate__fadeIn');
     } else if (felder[3].innerHTML == "X" && felder[6].innerHTML == "X" && felder[0].innerHTML == "") {
         felder[0].innerHTML = "O";
-
+        felder[0].classList.add('animate__animated');
+        felder[0].classList.add('animate__fadeIn');
     } else if (felder[0].innerHTML == "X" && felder[6].innerHTML == "X" && felder[3].innerHTML == "") {
         felder[3].innerHTML = "O";
-
+        felder[3].classList.add('animate__animated');
+        felder[3].classList.add('animate__fadeIn');
     } else if (felder[1].innerHTML == "X" && felder[4].innerHTML == "X" && felder[7].innerHTML == "") {
         felder[7].innerHTML = "O";
-
+        felder[7].classList.add('animate__animated');
+        felder[7].classList.add('animate__fadeIn');
     } else if (felder[4].innerHTML == "X" && felder[7].innerHTML == "X" && felder[1].innerHTML == "") {
         felder[1].innerHTML = "O";
-
+        felder[1].classList.add('animate__animated');
+        felder[1].classList.add('animate__fadeIn');
     } else if (felder[1].innerHTML == "X" && felder[7].innerHTML == "X" && felder[4].innerHTML == "") {
         felder[4].innerHTML = "O";
-
+        felder[4].classList.add('animate__animated');
+        felder[4].classList.add('animate__fadeIn');
     } else if (felder[2].innerHTML == "X" && felder[5].innerHTML == "X" && felder[8].innerHTML == "") {
         felder[8].innerHTML = "O";
-
+        felder[8].classList.add('animate__animated');
+        felder[8].classList.add('animate__fadeIn');
     } else if (felder[5].innerHTML == "X" && felder[8].innerHTML == "X" && felder[2].innerHTML == "") {
         felder[2].innerHTML = "O";
-
+        felder[2].classList.add('animate__animated');
+        felder[2].classList.add('animate__fadeIn');
     } else if (felder[2].innerHTML == "X" && felder[8].innerHTML == "X" && felder[5].innerHTML == "") {
         felder[5].innerHTML = "O";
-
+        felder[5].classList.add('animate__animated');
+        felder[5].classList.add('animate__fadeIn');
     } else if (felder[0].innerHTML == "X" && felder[4].innerHTML == "X" && felder[8].innerHTML == "") {
         felder[8].innerHTML = "O";
-
+        felder[8].classList.add('animate__animated');
+        felder[8].classList.add('animate__fadeIn');
     } else if (felder[4].innerHTML == "X" && felder[8].innerHTML == "X" && felder[0].innerHTML == "") {
         felder[0].innerHTML = "O";
-
+        felder[0].classList.add('animate__animated');
+        felder[0].classList.add('animate__fadeIn');
     } else if (felder[0].innerHTML == "X" && felder[8].innerHTML == "X" && felder[4].innerHTML == "") {
         felder[4].innerHTML = "O";
-
+        felder[4].classList.add('animate__animated');
+        felder[4].classList.add('animate__fadeIn');
     } else if (felder[2].innerHTML == "X" && felder[4].innerHTML == "X" && felder[6].innerHTML == "") {
         felder[6].innerHTML = "O";
-
+        felder[6].classList.add('animate__animated');
+        felder[6].classList.add('animate__fadeIn');
     } else if (felder[4].innerHTML == "X" && felder[6].innerHTML == "X" && felder[2].innerHTML == "") {
         felder[2].innerHTML = "O";
-
+        felder[2].classList.add('animate__animated');
+        felder[2].classList.add('animate__fadeIn');
     } else if (felder[2].innerHTML == "X" && felder[6].innerHTML == "X" && felder[4].innerHTML == "") {
         felder[4].innerHTML = "O";
-
+        felder[4].classList.add('animate__animated');
+        felder[4].classList.add('animate__fadeIn');
     } else if (felder[4].innerHTML == "") {
         felder[4].innerHTML = "O";
-
+        felder[4].classList.add('animate__animated');
+        felder[4].classList.add('animate__fadeIn');
     } else if (felder[1].innerHTML == "") {
         felder[1].innerHTML = "O";
-
+        felder[1].classList.add('animate__animated');
+        felder[1].classList.add('animate__fadeIn');
     } else if (felder[5].innerHTML == "") {
         felder[5].innerHTML = "O";
-
+        felder[5].classList.add('animate__animated');
+        felder[5].classList.add('animate__fadeIn');
     } else if (felder[7].innerHTML == "") {
         felder[7].innerHTML = "O";
-
+        felder[7].classList.add('animate__animated');
+        felder[7].classList.add('animate__fadeIn');
     } else if (felder[3].innerHTML == "") {
         felder[3].innerHTML = "O";
-
+        felder[3].classList.add('animate__animated');
+        felder[3].classList.add('animate__fadeIn');
     } else if (felder[0].innerHTML == "") {
         felder[0].innerHTML = "O";
-
+        felder[0].classList.add('animate__animated');
+        felder[0].classList.add('animate__fadeIn');
     } else if (felder[2].innerHTML == "") {
         felder[2].innerHTML = "O";
-
+        felder[2].classList.add('animate__animated');
+        felder[2].classList.add('animate__fadeIn');
     } else if (felder[6].innerHTML == "") {
         felder[6].innerHTML = "O";
-
+        felder[6].classList.add('animate__animated');
+        felder[6].classList.add('animate__fadeIn');
     } else if (felder[8].innerHTML == "") {
         felder[8].innerHTML = "O";
+        felder[8].classList.add('animate__animated');
+        felder[8].classList.add('animate__fadeIn');
     }
 }
 /*künstliche intelligenz in nem Zufallsgenerator.

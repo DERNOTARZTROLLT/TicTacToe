@@ -1,14 +1,19 @@
-body{
-    background-image:url(background.png);
+body {
+    background-image: url(background.png);
     background-position: center;
 }
+
 .Spielfeld {
     margin-left: auto;
     margin-right: auto;
 }
 
 .tac {
-    border: 0;
+border: 0;
+}
+.home2{
+    margin-top:0px;
+    margin-left: 0px;
 }
 
 .home {
@@ -20,6 +25,12 @@ body{
     font-size: 20px;
     width: 100px;
     height: 50px;
+    border-width: 5px;
+    border-style: solid;
+    border-radius: 20%;
+    animation-name: borderan;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
 }
 
 .home:hover {
@@ -34,14 +45,29 @@ vh vw
 .anzg {
     margin-left: auto;
     margin-right: auto;
+    width: 300px;
+    border-width: 5px;
+    border-style: solid;
+    border-radius: 20%;
+    animation-name: borderan;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
 }
 
-.anz {
-    text-align: center;
+.anz1 {
+    text-align: left;
     vertical-align: middle;
     font-family: Comic Sans MS, Comic Sans;
     color: white;
-} 
+    left: 0;
+}
+.anz2 {
+    text-align: right;
+    vertical-align: middle;
+    font-family: Comic Sans MS, Comic Sans;
+    color: white;
+    right: 0;
+}
 .button {
     font-family: Comic Sans MS, Comic Sans;
     font-size: 20px;
@@ -53,6 +79,12 @@ vh vw
     vertical-align: middle;
     text-align: center;
     font-size: 1.5em;
+    border-width: 5px;
+    border-style: solid;
+    border-radius: 8%;
+    animation-name: borderan;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
 }
 
 
@@ -60,14 +92,14 @@ vh vw
     font-family: Comic Sans MS, Comic Sans;
     color: orange;
     background-color: darkblue;
-    border-radius: 10%;
-    border-width:1%;
     font-size: 80px;
     width: 100px;
     height: 100px;
     text-align: center;
     vertical-align: middle;
     line-height: 1;
+    border-width: 10%;
+    border-radius: 20%;
 }
 
 .feld:hover {
@@ -95,6 +127,12 @@ h1 {
     text-align: center;
     display: none;
     z-index: 9;
+    border-width: 5px;
+    border-style: solid;
+    border-radius: 8%;
+    animation-name: borderan;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
 }
 
 #overlay2 {
@@ -107,6 +145,12 @@ h1 {
     text-align: center;
     display: none;
     z-index: 9;
+    border-width: 5px;
+    border-style: solid;
+    border-radius: 8%;
+    animation-name: borderan;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
 }
 
 #overlayh {
@@ -119,50 +163,87 @@ h1 {
     text-align: center;
     display: none;
     z-index: 9;
+    border-width: 5px;
+    border-style: solid;
+    border-radius: 40%;
+    animation-name: borderan;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
 }
+
 @media only screen and (min-width: 600px) {
-    .feld{
-        width:150px;
-        height:150px;
+    .feld {
+        width: 150px;
+        height: 150px;
         font-size: 130px;
 
     }
-    .home{
+    .anzg{
+        width: 450px;
+    }
+
+    .home {
         font-size: 30px;
         width: 150px;
         height: 75px;
     }
-    .button{
+
+    .button {
         font-size: 30px;
         width: 300px;
         height: 75px;
     }
-    h1{
+
+    h1 {
         font-size: 40px;
     }
 }
+
 @media only screen and (min-width: 800px) {
-    .feld{
-        width:200px;
-        height:200px;
+    .feld {
+        width: 200px;
+        height: 200px;
         font-size: 180px;
 
     }
-    .home{
+    .anzg{
+        width: 600px;
+    }
+    .home {
         font-size: 40px;
         width: 200px;
         height: 100px;
     }
-    .button{
+
+    .button {
         font-size: 40px;
         width: 350px;
         height: 100px;
     }
-    h1{
+
+    h1 {
         font-size: 50px;
     }
 }
-@keyframes setx {
-from {font-size: 1px;}
-to {font-size: 130px;}
+
+@keyframes borderan {
+    0% {
+        border-color: red;
+    }
+
+    25% {
+        border-color: yellow;
+    }
+
+    50% {
+        border-color: aqua;
+    }
+
+    75% {
+        border-color: green;
+    }
+
+    100% {
+        border-color: red;
+    }
 }
