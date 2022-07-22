@@ -41,21 +41,9 @@ body {
 .home:hover {
     background-color: red;
 }
-
-/*
-rem
-%
-vh vw
-*/
 .anzg {
     margin-left: auto;
     margin-right: auto;
-    /*border-width: 5px;
-    border-style: solid;
-    border-radius: 20px;
-    animation-name: borderan;
-    animation-duration: 4s;
-    animation-iteration-count: infinite;*/
 }
 
 .menue {
