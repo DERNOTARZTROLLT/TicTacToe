@@ -57,7 +57,7 @@ function resume() {
     document.getElementById("overlayh").style.display = "none";
 }
 function home() {
-    if (document.getElementById("overlayh").style.display == "none") {
+    if (document.getElementById("overlayh").style.display == "none" || document.getElementById("overlayh").style.display=="") {
         document.getElementById("overlayh").style.display = "block";
     } else {
         document.getElementById("overlayh").style.display = "none";
