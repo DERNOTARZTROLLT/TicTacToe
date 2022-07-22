@@ -6,6 +6,7 @@ let gamer = 2;
 let kicounter = 0;
 let zoomp1 = document.getElementById("player1")
 let zoomp2 = document.getElementById("player2")
+let kreise = document.getElementsByClassName("kreis")[0]
 //symbole setzen
 function setSymbol(btn) {
     if (btn.innerHTML == "") {
@@ -34,7 +35,7 @@ function nextround() {
     zoomp1.classList.remove('animate__zoomIn');
     zoomp2.classList.remove('animate__animated');
     zoomp2.classList.remove('animate__zoomIn');
-
+    kreise.className = ("kreis")
     for (var i = 0; i < x; i++) {
         felder[i].innerHTML = "";
         felder[i].classList.remove("animate__animated");
@@ -81,6 +82,7 @@ function restart() {
         zoomp1.classList.remove('animate__zoomIn');
         zoomp2.classList.remove('animate__animated');
         zoomp2.classList.remove('animate__zoomIn');
+        kreise.className = ("kreis")
     }
 
 }
@@ -113,6 +115,7 @@ function checkWin() {
         felder[2].innerHTML == felder[4].innerHTML && felder[4].innerHTML == felder[6].innerHTML && felder[2].innerHTML == "X") {
         player1 = player1 + 1;
         document.getElementById("player1").innerHTML = player1;
+        checkwhy()
         document.getElementById("overlay").style.display = "block";
         document.getElementById("meldung").innerHTML = "X"
         zoomp1.classList.add('animate__animated');
@@ -127,6 +130,7 @@ function checkWin() {
         felder[2].innerHTML == felder[4].innerHTML && felder[4].innerHTML == felder[6].innerHTML && felder[2].innerHTML == "O") {
         player2 = player2 + 1;
         document.getElementById("player2").innerHTML = player2;
+        checkwhy()
         document.getElementById("overlay").style.display = "block";
         document.getElementById("meldung").innerHTML = "O"
         zoomp2.classList.add('animate__animated');
@@ -139,14 +143,32 @@ function checkWin() {
 }
 function checkwhy() {
     let felder = document.getElementsByClassName("feld")
-    let kreise = document.getElementsByClassName("kreis")
-    if (felder[0].innerHTML == felder[1].innerHTML && felder[1].innerHTML == felder[2].innerHTML && felder[0].innerHTML == "X"|| felder[0].innerHTML == "O") {
-        document.getElementsByClassName("Kreis--top").style.display = "block";
-    }else if(felder[3].innerHTML == felder[4].innerHTML && felder[4].innerHTML == felder[5].innerHTML && felder[3].innerHTML == "X" ||felder[3].innerHTML == "O"){
-        felder[2].classList.add('Kreis');
-        document.getElementsByClassName("Kreis").style.display = "block";
-    }else if(felder[6].innerHTML == felder[7].innerHTML && felder[7].innerHTML == felder[8].innerHTML && felder[6].innerHTML == "X" ||felder[6] == "O"){
-        document.getElementsByClassName("Kreis kreis--bottom").style.display = "block"}
+
+    if (felder[0].innerHTML == felder[1].innerHTML && felder[1].innerHTML == felder[2].innerHTML && felder[0].innerHTML == "X" ||
+        felder[0].innerHTML == felder[1].innerHTML && felder[1].innerHTML == felder[2].innerHTML && felder[0].innerHTML == "O") {
+        kreise.classList.add("kreis--top")
+    } else if (felder[3].innerHTML == felder[4].innerHTML && felder[4].innerHTML == felder[5].innerHTML && felder[3].innerHTML == "X" ||
+        felder[3].innerHTML == felder[4].innerHTML && felder[4].innerHTML == felder[5].innerHTML && felder[3].innerHTML == "O") {
+        kreise.classList.add("kreis--center")
+    } else if (felder[6].innerHTML == felder[7].innerHTML && felder[7].innerHTML == felder[8].innerHTML && felder[6].innerHTML == "X" ||
+        felder[6].innerHTML == felder[7].innerHTML && felder[7].innerHTML == felder[8].innerHTML && felder[6].innerHTML == "O") {
+        kreise.classList.add("kreis--bottom")
+    } else if (felder[0].innerHTML == felder[3].innerHTML && felder[3].innerHTML == felder[6].innerHTML && felder[0].innerHTML == "X" ||
+        felder[0].innerHTML == felder[3].innerHTML && felder[3].innerHTML == felder[6].innerHTML && felder[0].innerHTML == "O") {
+        kreise.classList.add("kreis--left")
+    } else if (felder[1].innerHTML == felder[4].innerHTML && felder[4].innerHTML == felder[7].innerHTML && felder[1].innerHTML == "X" ||
+        felder[1].innerHTML == felder[4].innerHTML && felder[4].innerHTML == felder[7].innerHTML && felder[1].innerHTML == "O") {
+        kreise.classList.add("kreis--middle")
+    } else if (felder[2].innerHTML == felder[5].innerHTML && felder[5].innerHTML == felder[8].innerHTML && felder[2].innerHTML == "X" ||
+        felder[2].innerHTML == felder[5].innerHTML && felder[5].innerHTML == felder[8].innerHTML && felder[2].innerHTML == "O") {
+        kreise.classList.add("kreis--right")
+    } else if (felder[0].innerHTML == felder[4].innerHTML && felder[4].innerHTML == felder[8].innerHTML && felder[0].innerHTML == "X" ||
+        felder[0].innerHTML == felder[4].innerHTML && felder[4].innerHTML == felder[8].innerHTML && felder[0].innerHTML == "O") {
+        kreise.classList.add("kreis--diaright")
+    } else if (felder[2].innerHTML == felder[4].innerHTML && felder[4].innerHTML == felder[6].innerHTML && felder[2].innerHTML == "X" ||
+        felder[2].innerHTML == felder[4].innerHTML && felder[4].innerHTML == felder[6].innerHTML && felder[2].innerHTML == "O") {
+        kreise.classList.add("kreis--dialeft")
+    }
 }
 //künstliche intelligenz mit ueberpruefung von gesetzten x und abwehren
 function kitrain() {
